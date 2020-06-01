@@ -30,7 +30,7 @@ Il faut bien entendu remplacer l'adresse IP par l'adresse IP de la cible.
 
 L'attaque commencera.
 
-## Contributing
+## Contribution
 
 Si vous souhaitez modifier le programme. Faites une requête pull ou une issue.
 Ce sera un plaisir.
