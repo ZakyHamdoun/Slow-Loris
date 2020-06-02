@@ -24,6 +24,7 @@ Pour cela, utilisez de nouveau l'invité de commande et exécutez la commande su
 
 ```bash
 python slow_loris.py 192.168.2.1
+python path_to_slow_loris.py 192.168.1.1
 ```
 
 Il faut bien entendu remplacer l'adresse IP par l'adresse IP de la cible.
