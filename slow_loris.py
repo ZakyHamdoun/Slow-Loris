@@ -15,9 +15,7 @@ Modules utilisiés :
 socket - random - time - sys.
 Présent fondamentalement dans Python.
 
-Développé par le Commandant Z.
-@ZakousseMC.
-#JusticeForGeorgeFloyd.
+Développé par @ZakousseMC.
 """
 
 import socket
