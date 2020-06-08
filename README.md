@@ -38,8 +38,7 @@ Ce sera un plaisir.
 
 ## Crédits.
 
+Twitter : @ZakousseMC
+
 Merci à https://github.com/adrianchifor/pyslowloris pour l'implémentation Python du slow_loris.
-
-We are Anonymous. We are Legion. We do not forgive. We do not forget. Expect us.
-
-- COMMANDANT Z - #OpGeorgeFloyd.
+Vidéo très conseillée sur le principe de fonctionnement : https://www.youtube.com/watch?v=XiFkyR35v2Y.
