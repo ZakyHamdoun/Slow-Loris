@@ -15,7 +15,7 @@ Modules utilisiés :
 socket - random - time - sys.
 Présent fondamentalement dans Python.
 
-Développé par @ZakousseMC.
+Développé par @ZakyHamdoun.
 """
 
 import socket
@@ -64,7 +64,7 @@ if __name__ == "__main__": #START
         sockets.append(s)
 
     while True:
-        print("Connecté à {} sockets. Envoi des headers - OpAlpha...".format(len(sockets))) #ENVOI...
+        print("Connecté à {} sockets. Sending headers.format(len(sockets))) #ENVOI...
 
         for s in list(sockets):
             try:
